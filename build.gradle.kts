@@ -17,6 +17,20 @@ dependencies {
     testImplementation("org.slf4j:slf4j-simple:2.0.17")
 }
 
+allure {
+    report {
+        version.set("2.19.0")
+    }
+    adapter {
+        aspectjWeaver.set(true)
+        frameworks {
+            junit5 {
+                adapterVersion.set("2.19.0")
+            }
+        }
+    }
+}
+
 tasks.test {
     useJUnitPlatform()
 }
