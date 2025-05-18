@@ -1,4 +1,5 @@
 import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class SearchFormTests extends TestBase {
@@ -9,6 +10,7 @@ public class SearchFormTests extends TestBase {
     private String petersburgExpressCode = "2004000";
 
     @Test
+    @DisplayName("Проверить работу формы поиска с корректными данными")
     void checkFormWithCorrectData() {
         mainPage.inputStartingLocation(startingLocation)
                 .inputDestinationLocation(destinationLocation)
@@ -19,6 +21,7 @@ public class SearchFormTests extends TestBase {
     }
 
     @Test
+    @DisplayName("Проверить кнопку смены направлений")
     void checkDirectionChangeButton() {
         mainPage.inputStartingLocation(startingLocation)
                 .inputDestinationLocation(destinationLocation)
@@ -28,6 +31,7 @@ public class SearchFormTests extends TestBase {
     }
 
     @Test
+    @DisplayName("Проверить кнопку сброса значения поля 'Откуда'")
     void resetValueInFieldDirectionFrom() {
         mainPage.inputStartingLocation(startingLocation)
                 .resetDirectionField(resetButtonDirectionFrom)
@@ -35,6 +39,7 @@ public class SearchFormTests extends TestBase {
     }
 
     @Test
+    @DisplayName("Проверить кнопку сброса значения поля 'Куда'")
     void resetValueInFieldDirectionTo() {
         mainPage.inputDestinationLocation(destinationLocation)
                 .resetDirectionField(resetButtonDirectionTo)
@@ -42,6 +47,7 @@ public class SearchFormTests extends TestBase {
     }
 
     @Test
+    @DisplayName("Проверить невозможность отправки пустой формы")
     void sendEmptyForm() {
         mainPage.searchForConnection()
                 .verifyWarningToolTip();
