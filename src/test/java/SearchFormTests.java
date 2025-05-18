@@ -10,7 +10,6 @@ public class SearchFormTests extends TestBase {
 
     @Test
     void checkFormWithCorrectData() {
-        Configuration.timeout = 6000;
         mainPage.inputStartingLocation(startingLocation)
                 .inputDestinationLocation(destinationLocation)
                 .chooseDepartureDateFromDatepicker()
@@ -41,5 +40,10 @@ public class SearchFormTests extends TestBase {
                 .resetDirectionField(resetButtonDirectionTo)
                 .verifyCorrectReset(directionTo);
     }
-}
 
+    @Test
+    void sendEmptyForm() {
+        mainPage.searchForConnection()
+                .verifyWarningToolTip();
+    }
+}

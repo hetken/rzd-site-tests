@@ -5,6 +5,7 @@ import com.codeborne.selenide.WebDriverRunner;
 import components.Components;
 
 import static com.codeborne.selenide.Condition.attribute;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byTagAndText;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
@@ -67,6 +68,11 @@ public class MainPage {
     public MainPage verifyCurrentUrl() {
         WebDriverRunner.url().contains("ticket.rzd.ru");
         closeWindow();
+        return this;
+    }
+
+    public MainPage verifyWarningToolTip() {
+        $(byText("Введите пункт отправления")).shouldBe(visible);
         return this;
     }
 }
