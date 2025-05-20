@@ -2,7 +2,7 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
-import components.Components;
+import components.DatepickerComponent;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.attribute;
@@ -13,6 +13,8 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.closeWindow;
 
 public class MainPage {
+
+    protected DatepickerComponent datePicker = new DatepickerComponent();
 
     @Step("Выбрать в выпадающем списке пункт отправления")
     public MainPage inputStartingLocation(String city) {
@@ -30,13 +32,13 @@ public class MainPage {
 
     @Step("Выбрать в дейтпикере дату отъезда")
     public MainPage chooseDepartureDateFromDatepicker() {
-        Components.chooseDepartureDateFromDatepicker();
+        datePicker.chooseDepartureDateFromDatepicker();
         return this;
     }
 
     @Step("Выбрать в дейтпикере дату обратного рейса")
     public MainPage chooseReturnDateFromDatepicker() {
-        Components.chooseReturnDateFromDatepicker();
+        datePicker.chooseReturnDateFromDatepicker();
         return this;
     }
 

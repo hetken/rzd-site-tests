@@ -2,7 +2,7 @@ package components;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class Components {
+public class DatepickerComponent {
 
 
     public void chooseDepartureDateFromDatepicker() {

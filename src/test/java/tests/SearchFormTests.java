@@ -1,13 +1,14 @@
-import com.codeborne.selenide.Configuration;
+package tests;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class SearchFormTests extends TestBase {
 
-    private String startingLocation = "Санкт-Петербург";
-    private String destinationLocation = "Москва";
-    private String moscowExpressCode = "2000000";
-    private String petersburgExpressCode = "2004000";
+    private String startingLocation = "Санкт-Петербург",
+                   destinationLocation = "Москва",
+                   moscowExpressCode = "2000000",
+                   petersburgExpressCode = "2004000";
 
     @Test
     @DisplayName("Проверить работу формы поиска с корректными данными")

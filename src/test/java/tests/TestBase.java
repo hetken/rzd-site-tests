@@ -1,4 +1,7 @@
+package tests;
+
 import com.codeborne.selenide.SelenideElement;
+import components.DatepickerComponent;
 import org.junit.jupiter.api.BeforeEach;
 import pages.MainPage;
 
