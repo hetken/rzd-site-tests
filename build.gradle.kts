@@ -15,6 +15,7 @@ dependencies {
     testImplementation("com.codeborne:selenide:7.9.0")
     testImplementation("org.assertj:assertj-core:3.27.3")
     testImplementation("org.slf4j:slf4j-simple:2.0.17")
+    testImplementation("io.qameta.allure:allure-selenide:2.29.1")
 }
 
 allure {
